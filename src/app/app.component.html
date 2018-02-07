@@ -11,8 +11,9 @@
   <button (click)="addArticle(newtitle, newlink)" class="ui positive right floated button">Submit link</button>
 </form>
 <div class="ui grid posts">
-  <app-article-list 
-    [articles]="articles"
-    (onArticleSelected)="articleWasSelected($event)">
+  <app-article-list [articles]="articles" (onArticleSelected)="articleWasSelected($event)">
   </app-article-list>
 </div>
+<form class="ui small form segment">
+  <app-form-sku></app-form-sku>
+</form>

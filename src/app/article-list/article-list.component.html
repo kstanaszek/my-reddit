@@ -1,0 +1,8 @@
+<div class="ui items">
+<app-article
+  *ngFor="let article of sortedArticles()"
+  [article]="article"
+  (click)="clicked(article)"
+  [class.selected]="isSelected(article)">
+</app-article>
+</div> 

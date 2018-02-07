@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HostBinding } from '@angular/core/src/metadata/directives';
 import { Article } from './article.model';
 
@@ -9,7 +9,7 @@ import { Article } from './article.model';
 })
 export class ArticleComponent implements OnInit {
   @Input() article: Article;
-  @HostBinding('attr.class') cssClass = 'row';
+  @HostBinding('attr.class') cssClass = 'item';
 
   constructor() {
   }

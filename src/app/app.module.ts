@@ -8,6 +8,7 @@ import { ArticleComponent } from './article/article.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { FormSkuComponent } from './form-sku/form-sku.component';
 import { FormSkuBuilderComponent } from './form-sku-builder/form-sku-builder.component';
+import { NgModel } from '@angular/forms/src/directives/ng_model';
 
 @NgModule({
   declarations: [

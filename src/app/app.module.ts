@@ -9,6 +9,8 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { FormSkuComponent } from './form-sku/form-sku.component';
 import { FormSkuBuilderComponent } from './form-sku-builder/form-sku-builder.component';
 import { NgModel } from '@angular/forms/src/directives/ng_model';
+import { UserDemoComponentComponent } from './user-demo-component/user-demo-component.component';
+//import { UserService } from './services/user-service';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { NgModel } from '@angular/forms/src/directives/ng_model';
     ArticleComponent,
     ArticleListComponent,
     FormSkuComponent,
-    FormSkuBuilderComponent
+    FormSkuBuilderComponent,
+    UserDemoComponentComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ import { FormSkuComponent } from './form-sku/form-sku.component';
 import { FormSkuBuilderComponent } from './form-sku-builder/form-sku-builder.component';
 import { NgModel } from '@angular/forms/src/directives/ng_model';
 import { UserDemoComponentComponent } from './user-demo-component/user-demo-component.component';
-//import { UserService } from './services/user-service';
+import { UserService } from './services/user-service';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,10 @@ import { UserDemoComponentComponent } from './user-demo-component/user-demo-comp
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    UserService,
+    {provide: 'API_URL', useValue: 'www.google.com'}  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

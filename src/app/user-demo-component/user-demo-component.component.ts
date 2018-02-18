@@ -1,4 +1,4 @@
-import { Component, OnInit, ReflectiveInjector } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { UserService } from '../services/user-service';
 
 @Component({
@@ -9,11 +9,10 @@ import { UserService } from '../services/user-service';
 export class UserDemoComponentComponent implements OnInit {
 
   userName: string;
-  userService: UserService;
+  url: string
 
-  constructor() {
-    const injector: any = ReflectiveInjector.resolveAndCreate([UserService]);
-    this.userService = injector.get(UserService);
+  constructor(private userService: UserService, @Inject('API_URL') api_url: string) {
+    this.url = api_url;
   }
 
   ngOnInit() {
@@ -21,8 +20,9 @@ export class UserDemoComponentComponent implements OnInit {
 
   signIn(): void {
     this.userService.setUser({ name: 'Charlie' })
-    this.userName = this.userService.getUser().name;
+    this.userName = this.userService.getUser().name + " " + this.url;
     console.log('User name is: ', this.userName)
+    
   }
 
 }

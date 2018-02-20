@@ -12,6 +12,7 @@ import { NgModel } from '@angular/forms/src/directives/ng_model';
 import { UserDemoComponentComponent } from './user-demo-component/user-demo-component.component';
 import { UserService } from './services/user-service';
 import { AnalyticsDemoModule } from './analytics-demo/analytics-demo.module';
+import { SimpleHttpComponent } from './simple-http/simple-http.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AnalyticsDemoModule } from './analytics-demo/analytics-demo.module';
     ArticleListComponent,
     FormSkuComponent,
     FormSkuBuilderComponent,
-    UserDemoComponentComponent
+    UserDemoComponentComponent,
+    SimpleHttpComponent
   ],
   imports: [
     BrowserModule,

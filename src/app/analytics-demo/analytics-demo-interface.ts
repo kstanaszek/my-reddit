@@ -1,6 +1,6 @@
 export interface Metric {
-    eventName: string
-    scope: string
+    eventName: string;
+    scope: string;
 }
 
 export interface AnalyticsImplementation {

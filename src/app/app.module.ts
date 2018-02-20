@@ -11,6 +11,7 @@ import { FormSkuBuilderComponent } from './form-sku-builder/form-sku-builder.com
 import { NgModel } from '@angular/forms/src/directives/ng_model';
 import { UserDemoComponentComponent } from './user-demo-component/user-demo-component.component';
 import { UserService } from './services/user-service';
+import { AnalyticsDemoModule } from './analytics-demo/analytics-demo.module';
 
 @NgModule({
   declarations: [
@@ -25,11 +26,12 @@ import { UserService } from './services/user-service';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    AnalyticsDemoModule
   ],
   providers: [
     UserService,
-    {provide: 'API_URL', useValue: 'www.google.com'}  
+    {provide: 'API_URL', useValue: 'www.google.com'}
   ],
   bootstrap: [AppComponent]
 })

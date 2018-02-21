@@ -13,6 +13,7 @@ import { UserDemoComponentComponent } from './user-demo-component/user-demo-comp
 import { UserService } from './services/user-service';
 import { AnalyticsDemoModule } from './analytics-demo/analytics-demo.module';
 import { SimpleHttpComponent } from './simple-http/simple-http.component';
+import { youTubeSearchInjectables } from './you-tube-search/you-tube-search.injectables';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SimpleHttpComponent } from './simple-http/simple-http.component';
   ],
   providers: [
     UserService,
-    {provide: 'API_URL', useValue: 'www.google.com'}
+    {provide: 'API_URL', useValue: 'www.google.com'},
+    youTubeSearchInjectables
   ],
   bootstrap: [AppComponent]
 })

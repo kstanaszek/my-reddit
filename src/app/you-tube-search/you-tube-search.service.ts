@@ -5,6 +5,7 @@ import {
   import { Http, Response } from '@angular/http';
   import { Observable } from 'rxjs/Observable';
   import { SearchResult } from './search-result.modelt';
+  import 'rxjs/add/operator/map';
   
   /*
     This API key may or may not work for you. Your best bet is to issue your own
@@ -42,7 +43,7 @@ import {
         return this.http.get(queryUrl)
         .map((response: Response) => {
           return (<any>response.json()).items.map(item => {
-            // console.log("raw item", item); // uncomment if you want to debug
+            console.log("raw item", item); // uncomment if you want to debug
             return new SearchResult({
               id: item.id.videoId,
               title: item.snippet.title,

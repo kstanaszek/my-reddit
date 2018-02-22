@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { HostBinding } from '@angular/core/src/metadata/directives';
+import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { Article } from './article.model';
 
 @Component({
@@ -26,3 +25,4 @@ export class ArticleComponent implements OnInit {
   ngOnInit() {
   }
 }
+

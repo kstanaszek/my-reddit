@@ -1,5 +1,10 @@
-import { SearchResult } from "./search-result.modelt";
-import { OnInit } from "@angular/core";
+import { SearchResult } from './search-result.modelt';
+import { OnInit, Component } from '@angular/core';
+
+@Component({
+    selector: 'app-you-tube-search',
+    templateUrl: './you-tube-search.component.html'
+  })
 
 export class YouTubeSearchComponent implements OnInit {
     results: SearchResult[];
@@ -10,6 +15,6 @@ export class YouTubeSearchComponent implements OnInit {
 
     updateResults(results: SearchResult[]): void {
         this.results = results;
-        console.log("results:", this.results); // uncomment to take a look
+        console.log('results:', this.results); // uncomment to take a look
     }
 }

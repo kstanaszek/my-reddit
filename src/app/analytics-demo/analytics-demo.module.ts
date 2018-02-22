@@ -1,6 +1,6 @@
 import { Injectable, NgModule } from '@angular/core';
 import { Metric, AnalyticsImplementation } from '../analytics-demo/analytics-demo-interface';
-import { AnalyticsService } from '../services/analytics-service'
+import { AnalyticsService } from '../services/analytics-service';
 import { CommonModule } from '@angular/common';
 import { HttpModule, Http } from '@angular/http';
 

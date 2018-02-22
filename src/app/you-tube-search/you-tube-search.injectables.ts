@@ -8,4 +8,4 @@ export const youTubeSearchInjectables: Array<any> = [
     { provide: YouTubeSearchService, useClass: YouTubeSearchService },
     { provide: YOUTUBE_API_URL, useValue: YOUTUBE_API_URL },
     { provide: YOUTUBE_API_KEY, useValue: YOUTUBE_API_KEY }
-]
+];

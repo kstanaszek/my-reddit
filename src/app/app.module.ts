@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './article/article.component';
@@ -17,6 +18,18 @@ import { youTubeSearchInjectables } from './you-tube-search/you-tube-search.inje
 import { YouTubeSearchComponent } from './you-tube-search/you-tube-search.component';
 import { SearchResultComponent } from './you-tube-search/search-result.component';
 import { SearchBoxComponent } from './you-tube-search/search-box.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'articles', pathMatch: 'full' },
+  { path: 'articles', component: ArticleListComponent },
+  { path: 'sku', component: FormSkuComponent },
+  { path: 'skubuilder', component: FormSkuBuilderComponent },
+  { path: 'signin', component: UserDemoComponentComponent },
+  { path: 'basicrequest', component: SimpleHttpComponent },
+  { path: 'youtubesearch', component: YouTubeSearchComponent},
+  { path: 'search', redirectTo: 'youtubesearch'}
+];
 
 @NgModule({
   declarations: [
@@ -36,11 +49,14 @@ import { SearchBoxComponent } from './you-tube-search/search-box.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AnalyticsDemoModule
+    AnalyticsDemoModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     UserService,
-    {provide: 'API_URL', useValue: 'www.google.com'},
+    { provide: 'API_URL', useValue: 'www.google.com' },
+    { provide: 'APP_BASE_HREF', useValue: '/' } ,
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     youTubeSearchInjectables
   ],
   bootstrap: [AppComponent]

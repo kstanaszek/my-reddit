@@ -1,31 +1,19 @@
-<form class="ui large form segment">
-  <h3 class="ui header">Add a Link</h3>
-  <div class="field">
-    <label for="title">Title:</label>
-    <input name="title" #newtitle>
+<div class="page-header">
+  <div class="container">
+    <h1>Router Sample</h1>
+    <div class="navLinks">
+      <a [routerLink]="['/articles']">Articles</a> |
+      <a [routerLink]="['/sku']">SKU example</a> |
+      <a [routerLink]="['/skubuilder']">SKU builder example</a> |
+      <a [routerLink]="['/signin']">Sign In</a> |
+      <a [routerLink]="['/basicrequest']">Basic request</a> | 
+      <a [routerLink]="['/search']">Search as you type</a> | 
+    </div>
   </div>
-  <div class="field">
-    <label for="link">Link:</label>
-    <input name="link" #newlink>
-  </div>
-  <button (click)="addArticle(newtitle, newlink)" class="ui positive right floated button">Submit link</button>
-</form>
-<div class="ui grid posts">
-  <app-article-list [articles]="articles" (onArticleSelected)="articleWasSelected($event)">
-  </app-article-list>
 </div>
-<form class="ui small form segment">
-  <app-form-sku></app-form-sku>
-</form>
-<form class="ui small form segment">
-  <app-form-sku-builder></app-form-sku-builder>
-</form>
-<form class="ui small form segment">
-  <app-user-demo-component></app-user-demo-component>
-</form>
-<form class="ui small form segment">
-  <app-simple-http></app-simple-http>
-</form>
-<form class="ui small form segment">
-  <app-you-tube-search></app-you-tube-search>
-</form>
+<div id="content">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

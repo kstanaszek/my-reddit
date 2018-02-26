@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Article } from './article/article.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { Article } from './article/article.model';
 export class AppComponent {
   articles: Article[];
 
-  constructor() {
+  constructor(private router: Router) {
     this.articles = [
       new Article('Angular Homepage', 'http://angular.io', 1),
       new Article('Hadoop Homepage', 'http://hadoop.apache.org/', 10)

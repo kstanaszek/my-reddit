@@ -17,3 +17,37 @@
   </div>
 </div>
 
+<form class="ui large form segment">
+    <h3 class="ui header">Add a Link</h3>
+    <div class="field">
+      <label for="title">Title:</label>
+      <input name="title" #newtitle>
+    </div>
+    <div class="field">
+      <label for="link">Link:</label>
+      <input name="link" #newlink>
+    </div>
+    <button (click)="addArticle(newtitle, newlink)" class="ui positive right floated button">Submit link</button>
+  </form>
+  <div class="ui grid posts">
+    <app-article-list [articles]="articles" (onArticleSelected)="articleWasSelected($event)">
+    </app-article-list>
+  </div>
+  <form class="ui small form segment">
+    <app-form-sku></app-form-sku>
+  </form>
+  <form class="ui small form segment">
+    <app-form-sku-builder></app-form-sku-builder>
+  </form>
+  <form class="ui small form segment">
+    <app-user-demo-component></app-user-demo-component>
+  </form>
+  <form class="ui small form segment">
+    <app-simple-http></app-simple-http>
+  </form>
+  <form class="ui small form segment">
+    <a name="search">
+      <app-you-tube-search></app-you-tube-search>
+    </a>
+  </form>
+  

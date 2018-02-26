@@ -1,5 +1,7 @@
-<h2> Basic Request </h2> 
-<button type="button" (click)="makeRequest()" class="ui button">GET</button>
-<button type="button" (click)="makePostRequest()" class="ui button">POST</button>
-<div *ngIf="loading">loading...</div>
-<pre>{{ data | json}}</pre>
+<form class="ui small form segment">
+    <h2> Basic Request </h2>
+    <button type="button" (click)="makeRequest()" class="ui button">GET</button>
+    <button type="button" (click)="makePostRequest()" class="ui button">POST</button>
+    <div *ngIf="loading">loading...</div>
+    <pre>{{ data | json}}</pre>
+</form>

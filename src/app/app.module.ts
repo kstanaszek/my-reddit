@@ -19,10 +19,13 @@ import { YouTubeSearchComponent } from './you-tube-search/you-tube-search.compon
 import { SearchResultComponent } from './you-tube-search/search-result.component';
 import { SearchBoxComponent } from './you-tube-search/search-box.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { routes as childRoutes, ArticleModule } from './article-list/article-list.module';
+import { HomeComponent } from './home/home.component';
+import { NaviComponent } from './navi/navi.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'articles', pathMatch: 'full' },
-  { path: 'articles', component: ArticleListComponent },
+  { path: '', redirectTo: 'sku', pathMatch: 'full' },
+  { path: 'articles', component: HomeComponent},
   { path: 'sku', component: FormSkuComponent },
   { path: 'skubuilder', component: FormSkuBuilderComponent },
   { path: 'signin', component: UserDemoComponentComponent },
@@ -42,7 +45,9 @@ const routes: Routes = [
     SimpleHttpComponent,
     YouTubeSearchComponent,
     SearchResultComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
+    HomeComponent,
+    NaviComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpModule,
     AnalyticsDemoModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    // ArticleModule
   ],
   providers: [
     UserService,

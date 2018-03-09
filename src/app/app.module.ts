@@ -22,6 +22,10 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { routes as childRoutes, ArticleModule } from './article-list/article-list.module';
 import { HomeComponent } from './home/home.component';
 import { NaviComponent } from './navi/navi.component';
+import { LoginComponent } from './login/login.component';
+import { AUTH_PROVIDERS } from './auth.service';
+import { ProtectedComponent } from './protected/protected.component';
+import { LoggedInGuard } from './logged-in.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'sku', pathMatch: 'full' },
@@ -31,7 +35,9 @@ const routes: Routes = [
   { path: 'signin', component: UserDemoComponentComponent },
   { path: 'basicrequest', component: SimpleHttpComponent },
   { path: 'youtubesearch', component: YouTubeSearchComponent},
-  { path: 'search', redirectTo: 'youtubesearch'}
+  { path: 'search', redirectTo: 'youtubesearch'},
+  { path: 'login', component: LoginComponent},
+  { path: 'protected', component: ProtectedComponent, canActivate: [LoggedInGuard]}
 ];
 
 @NgModule({
@@ -47,7 +53,9 @@ const routes: Routes = [
     SearchResultComponent,
     SearchBoxComponent,
     HomeComponent,
-    NaviComponent
+    NaviComponent,
+    LoginComponent,
+    ProtectedComponent
   ],
   imports: [
     BrowserModule,
@@ -60,10 +68,12 @@ const routes: Routes = [
   ],
   providers: [
     UserService,
+    LoggedInGuard,
     { provide: 'API_URL', useValue: 'www.google.com' },
     { provide: 'APP_BASE_HREF', useValue: '/' } ,
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    youTubeSearchInjectables
+    youTubeSearchInjectables,
+    AUTH_PROVIDERS
   ],
   bootstrap: [AppComponent]
 })

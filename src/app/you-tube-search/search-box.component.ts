@@ -29,7 +29,7 @@ export class SearchBoxComponent implements OnInit {
             .subscribe(
                 (results: SearchResult[]) => {
                     this.loading.emit(false);
-                    this.results.emit(results)
+                    this.results.emit(results);
                 },
                 (err: any) => {
                     console.log(err);

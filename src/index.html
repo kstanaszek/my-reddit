@@ -11,9 +11,18 @@
 
 <body>
   <!-- Menu Bar -->
-  <div class="ui menu">
-      <app-navi></app-navi>
-  </div>
+
+  <div id="content">
+      <div class="container">
+        <router-outlet>
+            <div class="ui menu">
+                <app-navi></app-navi>
+            </div>
+          
+
+        </router-outlet>
+      </div>
+    </div>
 
   <div class="ui main text container">
     <app-root>Loading </app-root>

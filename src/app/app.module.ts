@@ -28,7 +28,7 @@ import { ProtectedComponent } from './protected/protected.component';
 import { LoggedInGuard } from './logged-in.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'sku', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'articles', component: HomeComponent},
   { path: 'sku', component: FormSkuComponent },
   { path: 'skubuilder', component: FormSkuBuilderComponent },

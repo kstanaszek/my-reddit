@@ -5,18 +5,19 @@ import {
     ActivatedRoute,
     Router,
     Routes
-  } from '@angular/router';
+} from '@angular/router';
 import { ArticleComponent } from '../article/article.component';
 
 export const routes: Routes = [
-    {path: 'article', component: ArticleComponent}
+    { path: ':id', component: ArticleComponent }
 ]
 
 @NgModule({
     declarations: [ArticleComponent],
+    exports: [ArticleComponent],
     imports: [CommonModule, RouterModule],
     providers: [],
 
 })
 
-export class ArticleModule{}
+export class ArticleModule { }

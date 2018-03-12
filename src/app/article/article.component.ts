@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { Article } from './article.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-article',
@@ -7,10 +8,12 @@ import { Article } from './article.model';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
+  id: number
   @Input() article: Article;
   @HostBinding('attr.class') cssClass = 'item';
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
+    route.params.subscribe(params => { this.id = params['id']});
   }
 
   voteUp(): boolean {
@@ -23,6 +26,9 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(!this.article){
+      this.article = new Article("Child article", "www.angular.id", this.id);
+    }
   }
 }
 

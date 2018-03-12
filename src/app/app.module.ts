@@ -19,17 +19,24 @@ import { YouTubeSearchComponent } from './you-tube-search/you-tube-search.compon
 import { SearchResultComponent } from './you-tube-search/search-result.component';
 import { SearchBoxComponent } from './you-tube-search/search-box.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { routes as childRoutes, ArticleModule } from './article-list/article-list.module';
+import { routes as childArticlesRoutes, ArticleModule } from './article-list/article-list.module';
 import { HomeComponent } from './home/home.component';
 import { NaviComponent } from './navi/navi.component';
 import { LoginComponent } from './login/login.component';
 import { AUTH_PROVIDERS } from './auth.service';
 import { ProtectedComponent } from './protected/protected.component';
 import { LoggedInGuard } from './logged-in.guard';
+import { ProductsComponent } from './products/products.component';
+
+import {
+  routes as childRoutes,
+  ProductsModule
+} from './products/products.module';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'articles', component: HomeComponent},
+  { path: 'articles', component: HomeComponent, children: childArticlesRoutes},
   { path: 'sku', component: FormSkuComponent },
   { path: 'skubuilder', component: FormSkuBuilderComponent },
   { path: 'signin', component: UserDemoComponentComponent },
@@ -37,13 +44,13 @@ const routes: Routes = [
   { path: 'youtubesearch', component: YouTubeSearchComponent},
   { path: 'search', redirectTo: 'youtubesearch'},
   { path: 'login', component: LoginComponent},
+  { path: 'products', component: ProductsComponent, children: childRoutes},
   { path: 'protected', component: ProtectedComponent, canActivate: [LoggedInGuard]}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticleComponent,
     ArticleListComponent,
     FormSkuComponent,
     FormSkuBuilderComponent,
@@ -64,7 +71,9 @@ const routes: Routes = [
     HttpModule,
     AnalyticsDemoModule,
     RouterModule.forRoot(routes),
-    // ArticleModule
+    ProductsModule,
+    ArticleModule
+    
   ],
   providers: [
     UserService,

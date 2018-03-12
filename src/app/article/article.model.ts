@@ -1,11 +1,14 @@
-export class Article {
-    title: string;
-    link: string;
-    votes: number;
+import { ActivatedRoute } from "@angular/router";
+import { StringifyOptions } from "querystring";
 
-    constructor(title: string, link: string, votes?: number) {
-        this.title = title;
-        this.link = link;
+export class Article {
+    id: string;
+
+    constructor(
+        public title: string, 
+        public link: string, 
+        public votes?: number) {
+
         this.votes = votes || 0;
     }
     voteUp() {
